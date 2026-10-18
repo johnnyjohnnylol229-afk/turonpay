@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "TURONPAY Wallet Pro",
+  "name": "TURONPAY",
   "short_name": "TURONPAY",
-  "description": "Демонстрационный прототип кошелька TURONPAY с картами, QR и аналитикой.",
+  "description": "TURONPAY — интерфейс мобильного кошелька.",
   "lang": "ru",
   "start_url": "./",
   "scope": "./",
