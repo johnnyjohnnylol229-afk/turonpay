@@ -3,14 +3,16 @@
 <head>
 <meta charset="utf-8">
 <title>TURONPAY</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#101a2d">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="TURONPAY">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
 <meta name="description" content="TURONPAY — демонстрационный интерфейс мобильного кошелька.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Unbounded:wght@500;700&display=swap">
 <style>
@@ -322,6 +324,78 @@ button:focus-visible{outline:2px solid var(--tq);outline-offset:3px}
 @media(max-width:360px){.top{padding-left:14px;padding-right:14px}main{padding-left:13px;padding-right:13px}.qa{gap:6px}.qa button{font-size:10px}.bal{font-size:24px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
+
+/* TURONPAY Signature Edition — premium navy & champagne */
+:root{
+ --bg:#f5f3ee;--sf:#fffefa;--ink:#172235;--mu:#7b8190;--ln:#e8e3d9;
+ --lap2:#1d3552;--tq:#b79a61;--gd:#e6c88b;--in:#17866b;--out:#c95662;
+ --chip:#f1ede4;--hd:#0d192b;color-scheme:light
+}
+:root[data-theme="dark"]{--bg:#09111d;--sf:#121c2b;--ink:#f3f0e8;--mu:#a2adba;--ln:#283548;--lap2:#263b52;--chip:#202b39;--hd:#080f19;color-scheme:dark}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]):not([data-theme="dark"]){--bg:#09111d;--sf:#121c2b;--ink:#f3f0e8;--mu:#a2adba;--ln:#283548;--lap2:#263b52;--chip:#202b39;--hd:#080f19;color-scheme:dark}}
+html,body{background:var(--bg);-webkit-font-smoothing:antialiased;overscroll-behavior-y:contain}
+body{letter-spacing:-.012em;touch-action:pan-y}
+#app{max-width:460px;min-height:100dvh;background:var(--bg);overflow:hidden}
+.top{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 100% 0%,rgba(220,190,126,.18),transparent 35%),radial-gradient(ellipse at 0% 95%,rgba(74,109,143,.28),transparent 42%),linear-gradient(145deg,#081323 0%,#172c44 60%,#254052 100%);padding:18px 18px 25px;border-radius:0 0 32px 32px;box-shadow:0 18px 38px rgba(12,24,39,.16)}
+.top:after{content:"";position:absolute;z-index:-1;width:225px;height:225px;border:1px solid rgba(230,200,139,.2);border-radius:50%;right:-112px;bottom:-145px;box-shadow:0 0 0 22px rgba(230,200,139,.035),0 0 0 45px rgba(230,200,139,.025)}
+.logo{font-size:15px;letter-spacing:.065em}.logo b{color:#e6c88b}
+.ib{width:41px;height:41px;border-radius:15px;background:rgba(255,255,255,.075);border-color:rgba(230,200,139,.24);backdrop-filter:blur(14px)}
+.hi{margin:23px 2px 16px;color:rgba(255,255,255,.72);font-size:13px}.hi b{font-size:25px;letter-spacing:-.045em;color:#fff}
+.hero{position:relative;isolation:isolate;overflow:hidden;border-radius:26px;padding:21px;background:linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.045));border:1px solid rgba(230,200,139,.32);box-shadow:inset 0 1px rgba(255,255,255,.12),0 15px 34px rgba(0,0,0,.12);backdrop-filter:blur(16px)}
+.hero:after{content:"";position:absolute;z-index:-1;right:-50px;top:-72px;width:170px;height:170px;border:1px solid rgba(230,200,139,.22);border-radius:50%;box-shadow:0 0 0 17px rgba(230,200,139,.03),0 0 0 35px rgba(230,200,139,.02)}
+.ct{font-size:11px;letter-spacing:.045em;color:rgba(255,255,255,.77)}.net{color:#e6c88b;font-style:normal;font-weight:800;letter-spacing:.13em}
+.bal{font-size:clamp(24px,6vw,30px);letter-spacing:-.055em;font-variant-numeric:tabular-nums;font-weight:700;margin:14px 0 19px}.bal em{font-size:13px;letter-spacing:0}
+.eye{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
+.hrow{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.75)}
+main{padding:21px 17px calc(124px + env(safe-area-inset-bottom,0px))}
+h2{font-size:16px;letter-spacing:-.035em;font-weight:800;margin:26px 2px 12px}
+.qa{gap:9px}.qa button,.tiles button{background:var(--sf);border:1px solid var(--ln);border-radius:20px;box-shadow:0 5px 17px rgba(25,35,48,.035);transition:transform .18s,border-color .18s,box-shadow .18s}
+.qa button{padding:14px 3px 12px}.qa i{width:44px;height:44px;border-radius:16px;background:linear-gradient(145deg,#142943,#36566b);color:#e6c88b;box-shadow:inset 0 1px rgba(255,255,255,.12)}
+.qa button:active,.tiles button:active,.row:active,nav button:active{transform:scale(.975)}
+.promo{position:relative;overflow:hidden;margin-top:16px;border:1px solid rgba(230,200,139,.2);border-radius:22px;padding:19px;background:radial-gradient(circle at 100% 0%,rgba(230,200,139,.2),transparent 38%),linear-gradient(120deg,#12243a,#254b59);box-shadow:0 10px 25px rgba(16,31,48,.13);line-height:1.45}
+.promo:after{content:"✦";position:absolute;right:17px;top:13px;font-size:28px;color:rgba(230,200,139,.55)}
+.tiles{gap:9px}.tiles button{padding:16px 7px;border-radius:19px;line-height:1.4}.tiles i{font-size:25px;margin-bottom:8px}
+.ops{gap:17px}.op{min-width:58px}.list{border-radius:22px;box-shadow:0 5px 20px rgba(20,30,45,.035)}
+.row{padding:14px 15px;gap:13px;transition:background .16s}.row:hover{background:color-mix(in srgb,var(--chip) 65%,transparent)}
+.ic{width:46px;height:46px;border-radius:16px}.t b{font-size:13px;letter-spacing:-.015em}.t span{display:block;margin-top:3px;line-height:1.4}.am{font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+nav{bottom:calc(10px + env(safe-area-inset-bottom,0px));width:calc(100% - 26px);max-width:430px;padding:7px;border-radius:25px;background:color-mix(in srgb,var(--sf) 91%,transparent);backdrop-filter:blur(24px);box-shadow:0 13px 38px rgba(7,16,29,.17);border-color:color-mix(in srgb,var(--ln) 80%,transparent)}
+nav button{padding:9px 0;border-radius:17px;gap:4px;transition:background .18s,color .18s}nav button i{font-size:20px}
+nav button.on{background:linear-gradient(135deg,rgba(183,154,97,.19),rgba(183,154,97,.07));color:var(--tq)}
+.cc{height:174px;border-radius:24px;padding:19px;box-shadow:0 12px 26px rgba(10,25,42,.15);transition:transform .18s}
+.cc:after{content:"";position:absolute;right:-40px;top:-70px;width:200px;height:200px;border:1px solid rgba(255,255,255,.19);border-radius:50%;box-shadow:0 0 0 18px rgba(255,255,255,.03),0 0 0 38px rgba(255,255,255,.02);pointer-events:none}
+.cc:not(.hm):not(.vs):not(.mc):not(.ot){background:radial-gradient(circle at 100% 0%,rgba(230,200,139,.18),transparent 40%),linear-gradient(135deg,#102b40,#1b6b62)}
+.cc.hm{background:radial-gradient(circle at 100% 0%,rgba(230,200,139,.17),transparent 40%),linear-gradient(135deg,#073d37,#147968)}
+.cc.vs{background:radial-gradient(circle at 100% 0%,rgba(230,200,139,.17),transparent 40%),linear-gradient(135deg,#151e35,#3b5276)}
+.cc.mc{background:radial-gradient(circle at 100% 0%,rgba(255,200,160,.16),transparent 40%),linear-gradient(135deg,#35221e,#90513d)}
+.cc.ot{background:linear-gradient(135deg,#202c3c,#536477)}
+.cb{font-size:21px;letter-spacing:-.04em}.cn{letter-spacing:.15em;font-size:13px}.ce{font-size:10px;letter-spacing:.13em}
+.prof{border-radius:22px;padding:18px;box-shadow:0 5px 20px rgba(20,30,45,.04)}.ava{background:linear-gradient(145deg,#142943,#b79a61);box-shadow:0 7px 17px rgba(16,37,58,.18)}
+.seg button{border-radius:13px}.seg button.on{background:var(--hd);border-color:var(--tq);box-shadow:inset 0 0 0 1px rgba(230,200,139,.18)}
+#shb{backdrop-filter:blur(7px)}.sheet{border-radius:29px 29px 0 0;padding:22px 19px calc(25px + env(safe-area-inset-bottom,0px));box-shadow:0 -16px 48px rgba(0,0,0,.18)}
+.sheet h3{font-size:19px;letter-spacing:-.035em}.sheet input{border-radius:15px;transition:border-color .18s,box-shadow .18s}
+.src{border:1px solid var(--ln);line-height:1.5}.go{border-radius:16px;background:linear-gradient(115deg,#162b43,#31586a 72%,#b79a61);box-shadow:0 8px 19px rgba(17,37,58,.17);transition:transform .18s,filter .18s}
+.go:active{transform:scale(.99);filter:brightness(1.08)}
+.srch:focus,.sheet input:focus{border-color:var(--tq);box-shadow:0 0 0 3px rgba(183,154,97,.14);outline:none}
+button:focus-visible{outline:2px solid var(--tq);outline-offset:3px}
+#qrview{width:100%;aspect-ratio:1/1;object-fit:cover;background:#080f19;border-radius:22px;display:block}
+.qrframe{position:relative;overflow:hidden;border-radius:22px;background:#080f19;margin:12px 0}
+.qrframe:after{content:"";position:absolute;inset:17%;border:2px solid #e6c88b;border-radius:20px;box-shadow:0 0 0 999px rgba(4,10,18,.12);pointer-events:none}
+.qrline{position:absolute;left:18%;right:18%;top:20%;height:2px;background:#e6c88b;box-shadow:0 0 12px #e6c88b;z-index:2;animation:scanline 2.2s ease-in-out infinite alternate;pointer-events:none}
+@keyframes scanline{from{top:20%}to{top:78%}}
+.qrhint{font-size:12px;color:var(--mu);line-height:1.5;text-align:center}
+@media(max-width:360px){.top{padding-left:14px;padding-right:14px}main{padding-left:13px;padding-right:13px}.bal{font-size:23px}.qa{gap:6px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+
+/* Wallet Pro additions */
+.bankmark{display:flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.06em;font-weight:800;text-transform:uppercase}
+.bankmark .bankdot{display:inline-grid;place-items:center;width:27px;height:27px;border-radius:9px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);font-size:10px;letter-spacing:-.04em}
+.cc .ct{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.cc .net{font-size:12px;letter-spacing:.13em}.cc .cb{font-size:23px;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.cc .ce{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:10px;letter-spacing:.08em}.cc.kapital{background:radial-gradient(circle at 100% 0%,rgba(255,205,94,.2),transparent 42%),linear-gradient(135deg,#152d4c,#274e75)}
+.cc.tenge{background:radial-gradient(circle at 100% 0%,rgba(229,98,123,.23),transparent 42%),linear-gradient(135deg,#241c35,#583e64)}
+.cc.ipoteka{background:radial-gradient(circle at 100% 0%,rgba(230,200,139,.24),transparent 42%),linear-gradient(135deg,#092f30,#14756b)}
+.analytics-card{padding:17px;border:1px solid var(--ln);border-radius:22px;background:var(--sf);box-shadow:0 6px 20px rgba(20,30,45,.04)}.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{padding:14px;border-radius:17px;background:var(--chip)}.stat small{display:block;color:var(--mu);font-size:11px;margin-bottom:8px}.stat strong{font-size:19px;letter-spacing:-.04em}.bars{height:132px;display:flex;align-items:flex-end;justify-content:space-around;gap:9px;padding:16px 2px 0}.barcol{display:flex;flex:1;align-items:center;flex-direction:column;justify-content:flex-end;height:100%;gap:7px;color:var(--mu);font-size:10px}.barfill{width:min(100%,26px);min-height:5px;border-radius:8px 8px 4px 4px;background:linear-gradient(180deg,#e6c88b,#a88a51);box-shadow:0 3px 10px rgba(183,154,97,.2);transition:height .45s cubic-bezier(.2,.8,.2,1)}.notice{display:flex;gap:12px;padding:14px;border-bottom:1px solid var(--ln);align-items:flex-start}.notice:last-child{border-bottom:0}.notice .nicon{width:40px;height:40px;border-radius:14px;background:var(--chip);display:grid;place-items:center;flex-shrink:0}.notice b{display:block;font-size:13px}.notice small{display:block;color:var(--mu);font-size:11px;line-height:1.5;margin-top:4px}.facebox{padding:18px;text-align:center;border:1px solid var(--ln);border-radius:22px;background:var(--sf)}.faceglyph{font-size:42px;color:var(--tq);margin:4px 0 10px}.subtle-note{font-size:11px;line-height:1.5;color:var(--mu)}.category-line{display:flex;gap:10px;align-items:center;margin:13px 0}.category-line .catname{flex:1;font-size:12px}.category-line .track{width:38%;height:7px;background:var(--chip);border-radius:8px;overflow:hidden}.category-line .track i{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,#b79a61,#e6c88b)}.category-line strong{font-size:11px;font-variant-numeric:tabular-nums}
+@media(prefers-reduced-motion:reduce){.barfill{transition:none}}
+
 </style>
 </head>
 <body>
@@ -331,11 +405,11 @@ button:focus-visible{outline:2px solid var(--tq);outline-offset:3px}
 <div class="toast" id="toast"></div>
 <script>
 var $=function(s){return document.querySelector(s)};
-var S={lang:'ru',tab:'home',theme:'auto',p:0,hide:false,cat:'',q:'',pin:'1234'};
-try{var sv=JSON.parse(localStorage.getItem('tp')||'{}');if(sv.lang)S.lang=sv.lang;if(sv.theme)S.theme=sv.theme}catch(e){}
-function save(){try{localStorage.setItem('tp',JSON.stringify({lang:S.lang,theme:S.theme}))}catch(e){}}
+var S={lang:'ru',tab:'home',theme:'auto',p:0,hide:false,cat:'',q:'',pin:'1234',faceEnabled:false};
+try{var sv=JSON.parse(localStorage.getItem('tp')||'{}');if(sv.lang)S.lang=sv.lang;if(sv.theme)S.theme=sv.theme;if(sv.faceEnabled)S.faceEnabled=true}catch(e){}
+function save(){try{localStorage.setItem('tp',JSON.stringify({lang:S.lang,theme:S.theme,faceEnabled:S.faceEnabled}))}catch(e){}}
 function applyTheme(){var r=document.documentElement;if(S.theme==='auto')r.removeAttribute('data-theme');else r.setAttribute('data-theme',S.theme)}
-var UZ={'Ассалому алайкум,':'Assalomu alaykum,','Основная карта':'Asosiy karta','Доступно':'Mavjud','сум':'so‘m','Перевод':'O‘tkazma','Пополнить':'To‘ldirish','QR-код':'QR-kod','История':'Tarix','Популярные платежи':'Mashhur to‘lovlar','Операторы связи':'Aloqa operatorlari','Последние операции':'So‘nggi amallar','Главная':'Asosiy','Платежи':'To‘lovlar','Карты':'Kartalar','Профиль':'Profil','Мобильная связь':'Mobil aloqa','Интернет и ТВ':'Internet va TV','Коммунальные':'Kommunal','Штрафы и налоги':'Jarima va soliqlar','Образование':'Ta’lim','Транспорт':'Transport','Электричество':'Elektr energiyasi','Природный газ':'Tabiiy gaz','Вода':'Suv','Вывоз мусора':'Chiqindi','Штрафы ГАИ':'YHXB jarimalari','Налоги':'Soliqlar','Контракт вуза':'OTM kontrakti','Детский сад':'Bolalar bog‘chasi','Метро Ташкента':'Toshkent metrosi','Номер телефона':'Telefon raqami','Лицевой счёт':'Shaxsiy hisob','Номер постановления':'Qaror raqami','ПИНФЛ или ИНН':'JShShIR yoki STIR','Номер договора':'Shartnoma raqami','Номер карты':'Karta raqami','Номер карты получателя':'Qabul qiluvchi karta raqami','Перевод по карте':'Karta orqali o‘tkazma','Пополнение карты':'Kartani to‘ldirish','Оплатить':'To‘lash','Перевести':'O‘tkazish','Сумма, сум':'Summa, so‘m','Списание с карты':'Yechiladigan karta','Зачисление на карту':'Tushadigan karta','Отмена':'Bekor qilish','Закрыть':'Yopish','Карта заблокирована':'Karta bloklangan','Недостаточно средств':'Mablag‘ yetarli emas','Введите сумму':'Summani kiriting','Введите 16 цифр номера карты':'Karta raqamining 16 ta raqamini kiriting','Введите номер телефона полностью':'Telefon raqamini to‘liq kiriting','Заполните все поля':'Barcha maydonlarni to‘ldiring','Готово':'Tayyor','Успешно':'Muvaffaqiyatli','Дата':'Sana','Время':'Vaqt','Операция':'Amal','Наименование':'Nomi','Реквизиты':'Rekvizitlar','Сумма':'Summa','Комиссия':'Komissiya','Итого':'Jami','Карта списания':'Yechilgan karta','№ чека':'Chek raqami','Статус':'Holat','Выполнено':'Bajarildi','Электронный чек TURONPAY':'TURONPAY elektron cheki','Поделиться чеком':'Chekni ulashish','Чек скопирован':'Chek nusxalandi','Оплата услуги':'Xizmat to‘lovi','Поступление':'Kelib tushish','Зарплата':'Maosh','Перевод от Азиза':'Aziz’dan o‘tkazma','Сегодня':'Bugun','Вчера':'Kecha','Мои карты':'Mening kartalarim','Основная':'Asosiy','Заморожена':'Muzlatilgan','Добавить карту':'Karta qo‘shish','Сделать основной':'Asosiy qilish','Заморозить':'Muzlatish','Разморозить':'Muzlatishni bekor qilish','Скопировать номер':'Raqamni nusxalash','Номер скопирован':'Raqam nusxalandi','Срок действия':'Amal qilish muddati','Введите срок действия ММ/ГГ':'Amal qilish muddatini kiriting OY/YY','Карта добавлена':'Karta qo‘shildi','Добавить':'Qo‘shish','Оформление':'Ko‘rinish','Тема':'Mavzu','Светлая':'Yorug‘','Тёмная':'Qorong‘i','Как в системе':'Tizim bo‘yicha','Язык':'Til','Безопасность':'Xavfsizlik','Сменить PIN-код':'PIN-kodni almashtirish','Новый PIN-код':'Yangi PIN-kod','PIN-код изменён':'PIN-kod o‘zgartirildi','Введите 4 цифры':'4 ta raqam kiriting','Заблокировать приложение':'Ilovani qulflash','Сохранить':'Saqlash','Поиск услуги':'Xizmatni qidirish','Все':'Hammasi','Ничего не найдено':'Hech narsa topilmadi','Введите PIN-код':'PIN-kodni kiriting','Неверный PIN-код':'PIN-kod noto‘g‘ri','Новых уведомлений нет':'Yangi bildirishnomalar yo‘q','Сканер QR скоро будет доступен':'QR skaner tez orada ishga tushadi','Платите за связь и коммунальные услуги без комиссии':'Aloqa va kommunal xizmatlarni komissiyasiz to‘lang','Уведомления':'Bildirishnomalar','Скрыть баланс':'Balansni yashirish'};
+var UZ={'Ассалому алайкум,':'Assalomu alaykum,','Основная карта':'Asosiy karta','Доступно':'Mavjud','сум':'so‘m','Перевод':'O‘tkazma','Пополнить':'To‘ldirish','QR-код':'QR-kod','История':'Tarix','Популярные платежи':'Mashhur to‘lovlar','Операторы связи':'Aloqa operatorlari','Последние операции':'So‘nggi amallar','Главная':'Asosiy','Платежи':'To‘lovlar','Карты':'Kartalar','Профиль':'Profil','Мобильная связь':'Mobil aloqa','Интернет и ТВ':'Internet va TV','Коммунальные':'Kommunal','Штрафы и налоги':'Jarima va soliqlar','Образование':'Ta’lim','Транспорт':'Transport','Электричество':'Elektr energiyasi','Природный газ':'Tabiiy gaz','Вода':'Suv','Вывоз мусора':'Chiqindi','Штрафы ГАИ':'YHXB jarimalari','Налоги':'Soliqlar','Контракт вуза':'OTM kontrakti','Детский сад':'Bolalar bog‘chasi','Метро Ташкента':'Toshkent metrosi','Номер телефона':'Telefon raqami','Лицевой счёт':'Shaxsiy hisob','Номер постановления':'Qaror raqami','ПИНФЛ или ИНН':'JShShIR yoki STIR','Номер договора':'Shartnoma raqami','Номер карты':'Karta raqami','Номер карты получателя':'Qabul qiluvchi karta raqami','Перевод по карте':'Karta orqali o‘tkazma','Пополнение карты':'Kartani to‘ldirish','Оплатить':'To‘lash','Перевести':'O‘tkazish','Сумма, сум':'Summa, so‘m','Списание с карты':'Yechiladigan karta','Зачисление на карту':'Tushadigan karta','Отмена':'Bekor qilish','Закрыть':'Yopish','Карта заблокирована':'Karta bloklangan','Недостаточно средств':'Mablag‘ yetarli emas','Введите сумму':'Summani kiriting','Введите 16 цифр номера карты':'Karta raqamining 16 ta raqamini kiriting','Введите номер телефона полностью':'Telefon raqamini to‘liq kiriting','Заполните все поля':'Barcha maydonlarni to‘ldiring','Готово':'Tayyor','Успешно':'Muvaffaqiyatli','Дата':'Sana','Время':'Vaqt','Операция':'Amal','Наименование':'Nomi','Реквизиты':'Rekvizitlar','Сумма':'Summa','Комиссия':'Komissiya','Итого':'Jami','Карта списания':'Yechilgan karta','№ чека':'Chek raqami','Статус':'Holat','Выполнено':'Bajarildi','Электронный чек TURONPAY':'TURONPAY elektron cheki','Поделиться чеком':'Chekni ulashish','Чек скопирован':'Chek nusxalandi','Оплата услуги':'Xizmat to‘lovi','Поступление':'Kelib tushish','Зарплата':'Maosh','Перевод от Азиза':'Aziz’dan o‘tkazma','Сегодня':'Bugun','Вчера':'Kecha','Мои карты':'Mening kartalarim','Основная':'Asosiy','Заморожена':'Muzlatilgan','Добавить карту':'Karta qo‘shish','Сделать основной':'Asosiy qilish','Заморозить':'Muzlatish','Разморозить':'Muzlatishni bekor qilish','Скопировать номер':'Raqamni nusxalash','Номер скопирован':'Raqam nusxalandi','Срок действия':'Amal qilish muddati','Введите срок действия ММ/ГГ':'Amal qilish muddatini kiriting OY/YY','Карта добавлена':'Karta qo‘shildi','Добавить':'Qo‘shish','Оформление':'Ko‘rinish','Тема':'Mavzu','Светлая':'Yorug‘','Тёмная':'Qorong‘i','Как в системе':'Tizim bo‘yicha','Язык':'Til','Безопасность':'Xavfsizlik','Сменить PIN-код':'PIN-kodni almashtirish','Новый PIN-код':'Yangi PIN-kod','PIN-код изменён':'PIN-kod o‘zgartirildi','Введите 4 цифры':'4 ta raqam kiriting','Заблокировать приложение':'Ilovani qulflash','Сохранить':'Saqlash','Поиск услуги':'Xizmatni qidirish','Все':'Hammasi','Ничего не найдено':'Hech narsa topilmadi','Введите PIN-код':'PIN-kodni kiriting','Неверный PIN-код':'PIN-kod noto‘g‘ri','Новых уведомлений нет':'Yangi bildirishnomalar yo‘q','Сканер QR скоро будет доступен':'QR skaner tez orada ishga tushadi','Сканировать QR-код':'QR-kodni skanerlash','Наведите камеру на QR-код для оплаты. Это демонстрационный сканер.':'To‘lov uchun kamerani QR-kodga qarating. Bu demo skaner.','Запрашиваем доступ к камере…':'Kameraga ruxsat so‘ralmoqda…','Или введите код вручную':'Yoki kodni qo‘lda kiriting','Продолжить':'Davom etish','Камера недоступна в этом браузере. Введите код вручную.':'Bu brauzerda kamera mavjud emas. Kodni qo‘lda kiriting.','Камера включена. Если QR не распознаётся, введите код вручную ниже.':'Kamera yoqildi. QR aniqlanmasa, kodni quyida qo‘lda kiriting.','QR-код распознан. Нажмите «Продолжить».':'QR-kod aniqlandi. “Davom etish”ni bosing.','Нет доступа к камере. Разрешите доступ в Safari или введите код вручную.':'Kameraga ruxsat yo‘q. Safari sozlamalarida ruxsat bering yoki kodni qo‘lda kiriting.','Введите код или отсканируйте QR-код':'Kodni kiriting yoki QR-kodni skanerlang','QR-код получен':'QR-kod olindi','Демо-режим':'Demo rejim','Проверьте реквизиты перед оплатой. Реальная оплата не выполняется.':'To‘lovdan oldin ma’lumotlarni tekshiring. Haqiqiy to‘lov bajarilmaydi.','Платите за связь и коммунальные услуги без комиссии':'Aloqa va kommunal xizmatlarni komissiyasiz to‘lang','Уведомления':'Bildirishnomalar','Скрыть баланс':'Balansni yashirish'};
 function T(s){return(S.lang==='uz'&&UZ[s])||s}
 function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')}
 function p2(n){return('0'+n).slice(-2)}
@@ -360,44 +434,50 @@ var CAT=[['Мобильная связь','📱','Номер телефона',[
 var ITEMS=[];CAT.forEach(function(c){c[3].forEach(function(x){var f=x[2]||c[2];ITEMS.push({n:x[0],e:x[1]||c[1],f:f,c:c[0],ph:f==='Номер телефона'})})});
 function idx(n){for(var i=0;i<ITEMS.length;i++)if(ITEMS[i].n===n)return i}
 var OPS=['Ucell','Beeline','Mobiuz','Uzmobile','Uztelecom','Sarkor Telecom'];
-var cards=[{n:'UZCARD',num:'8600123456784821',exp:'09/28',bal:100000000,bl:0},{n:'HUMO',num:'9860600422117305',exp:'03/29',bal:3250000,bl:0}];
-function mask(n){return n.slice(0,4)+' •••• •••• '+n.slice(-4)}
-function mask4(c){return'•••• '+c.num.slice(-4)+' '+c.n}
+var cards=[
+{bank:'KAPITALBANK',mark:'K',n:'UZCARD',num:'8600123400004821',exp:'09/28',bal:100000000,currency:'UZS',bl:0,style:'kapital'},
+{bank:'TENGE BANK',mark:'T',n:'HUMO',num:'9860600400007305',exp:'03/29',bal:3250000,currency:'UZS',bl:0,style:'tenge'},
+{bank:'IPOTEKA BANK',mark:'I',n:'VISA',num:'4111111100001042',exp:'11/29',bal:1250,currency:'USD',bl:0,style:'ipoteka'}];
+function mask(n){return '•••• •••• •••• '+n.slice(-4)}
+function money(c,n){return c.currency==='USD'?'$'+Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}):fmt(Math.round(n))+' сум'}
+function mask4(c){return c.bank+' · '+c.n+' · •••• '+c.num.slice(-4)}
 function netOf(n){var f=n.slice(0,4);return f==='8600'||f==='5614'?'UZCARD':f==='9860'?'HUMO':n[0]==='4'?'VISA':n[0]==='5'?'MASTERCARD':'CARD'}
-function cls(n){return{UZCARD:'',HUMO:'hm',VISA:'vs',MASTERCARD:'mc'}[n]===undefined?'ot':{UZCARD:'',HUMO:'hm',VISA:'vs',MASTERCARD:'mc'}[n]}
+function cls(n){return {UZCARD:'',HUMO:'hm',VISA:'vs',MASTERCARD:'mc'}[n]===undefined?'ot':{UZCARD:'',HUMO:'hm',VISA:'vs',MASTERCARD:'mc'}[n]}
+
 var txs=[{n:'Beeline',e:'📱',op:'Оплата услуги',s:-1,a:50000,d:new Date(Date.now()-2*36e5),f:'+998 91 555 02 38',id:'4812093716',cd:'•••• 4821 UZCARD'},
 {n:'Зарплата',e:'💼',op:'Поступление',s:1,a:8500000,d:ago(1,10,5,41),f:'OOO Turon Trade',id:'4811876204',cd:'•••• 4821 UZCARD'},
 {n:'Korzinka',e:'🛒',op:'Оплата услуги',s:-1,a:312400,d:ago(2,19,42,8),f:'Terminal 004412',id:'4810552971',cd:'•••• 4821 UZCARD'},
 {n:'Электричество',e:'⚡',op:'Оплата услуги',s:-1,a:185000,d:ago(4,9,15,27),f:'1020 3345 7781',id:'4809114538',cd:'•••• 4821 UZCARD'},
 {n:'Перевод от Азиза',e:'👤',op:'Поступление',s:1,a:1000000,d:ago(6,21,3,55),f:'8600 •••• •••• 7712',id:'4807630095',cd:'•••• 4821 UZCARD'}];
-function txRow(t,i){return'<button class="row" data-a="rc:'+i+'">'+ico(t.n,t.e)+'<span class="t"><b>'+T(t.n)+'</b><span>'+rel(t.d)+', '+tstr(t.d)+'</span></span><b class="am '+(t.s<0?'out':'in')+'">'+(t.s<0?'−':'+')+fmt(t.a)+'</b></button>'}
-function cc(c,i,st){var g=st?'div':'button';return'<'+g+' class="cc '+cls(c.n)+(c.bl?' bl':'')+'"'+(st?'':' data-a="cd:'+i+'"')+'><span class="ct"><span>'+(i===S.p?'<span class="badge">'+T('Основная')+'</span> ':'')+(c.bl?'<span class="badge">'+T('Заморожена')+'</span>':'')+'</span><b class="net">'+c.n+'</b></span><span class="cb">'+fmt(c.bal)+' '+T('сум')+'</span><span><span class="cn">'+mask(c.num)+'</span><br><span class="ce">'+c.exp+'&nbsp;&nbsp;JASUR KARIMOV</span></span></'+g+'>'}
+function txRow(t,i){return'<button class="row" data-a="rc:'+i+'">'+ico(t.n,t.e)+'<span class="t"><b>'+T(t.n)+'</b><span>'+rel(t.d)+', '+tstr(t.d)+'</span></span><b class="am '+(t.s<0?'out':'in')+'">'+(t.s<0?'−':'+')+money({currency:t.currency||'UZS'},t.a)+'</b></button>'}
+function cc(c,i,st){var g=st?'div':'button';return '<'+g+' class="cc '+(c.style||cls(c.n))+(c.bl?' bl':'')+'"'+(st?'':' data-a="cd:'+i+'"')+'><span class="ct"><span class="bankmark"><i class="bankdot">'+c.mark+'</i>'+c.bank+'</span><span class="net">'+c.n+'</span></span><span class="cb">'+money(c,c.bal)+'</span><span><span class="cn">'+mask(c.num)+'</span><br><span class="ce"><span>'+c.exp+' · TALGAT</span><b>'+c.currency+'</b></span></span></'+g+'>'}
 function payList(){var q=S.q.toLowerCase(),h='';CAT.forEach(function(c){if(S.cat&&S.cat!==c[0])return;var r='';ITEMS.forEach(function(x,i){if(x.c!==c[0])return;if(q&&(x.n+' '+T(x.n)).toLowerCase().indexOf(q)<0)return;r+='<button class="row" data-a="pay:'+i+'">'+ico(x.n,x.e)+'<span class="t"><b>'+T(x.n)+'</b><span>'+T(x.f)+'</span></span><i class="ch">›</i></button>'});if(r)h+='<h2>'+T(c[0])+'</h2><div class="list">'+r+'</div>'});return h||'<p class="mu">'+T('Ничего не найдено')+'</p>'}
 function render(){var c=cards[S.p],t=S.tab,top,m='';
 var bar='<div class="bar"><div class="logo">'+STAR+'<span>TURON<b>PAY</b></span></div><div class="rt"><button class="ib" data-a="bell" aria-label="'+T('Уведомления')+'">🔔</button><button class="ib" data-a="lock" aria-label="'+T('Заблокировать приложение')+'">🔒</button></div></div>';
-if(t==='home'){top=bar+'<div class="hi">'+T('Ассалому алайкум,')+'<b>Жасур</b></div><div class="hero"><div class="ct"><span>'+T('Основная карта')+(c.bl?' <span class="badge">'+T('Заморожена')+'</span>':'')+'</span><b class="net">'+c.n+'</b></div><div class="bal"><span>'+(S.hide?'••• •••':fmt(c.bal))+'</span><em>'+T('сум')+'</em><button class="eye" data-a="hide" aria-label="'+T('Скрыть баланс')+'">👁</button></div><div class="hrow"><span>'+mask(c.num)+'</span><span>'+c.exp+'</span></div></div>';
+if(t==='home'){top=bar+'<div class="hi">'+T('Ассалому алайкум,')+'<b>Талгат</b></div><div class="hero"><div class="ct"><span>'+T('Основная карта')+(c.bl?' <span class="badge">'+T('Заморожена')+'</span>':'')+'</span><b class="net">'+c.n+'</b></div><div class="bal"><span>'+(S.hide?'••• •••':(c.currency==='USD'?'$'+Number(c.bal).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}):fmt(c.bal)))+'</span><em>'+ (c.currency==='USD'?'USD':'UZS')+'</em><button class="eye" data-a="hide" aria-label="'+T('Скрыть баланс')+'">👁</button></div><div class="hrow"><span>'+mask(c.num)+'</span><span>'+c.exp+'</span></div></div>';
 m='<div class="qa"><button data-a="tr"><i>💸</i>'+T('Перевод')+'</button><button data-a="topup"><i>➕</i>'+T('Пополнить')+'</button><button data-a="qr"><i>▣</i>'+T('QR-код')+'</button><button data-a="hist"><i>🧾</i>'+T('История')+'</button></div>';
 m+='<button class="promo" data-a="cat:Мобильная связь">'+T('Платите за связь и коммунальные услуги без комиссии')+'</button>';
 m+='<h2>'+T('Популярные платежи')+'</h2><div class="tiles">'+CAT.map(function(x){return'<button data-a="cat:'+x[0]+'"><i>'+x[1]+'</i>'+T(x[0])+'</button>'}).join('')+'</div>';
 m+='<h2>'+T('Операторы связи')+'</h2><div class="ops">'+OPS.map(function(n){return'<button class="op" data-a="pay:'+idx(n)+'">'+ico(n)+n.split(' ')[0]+'</button>'}).join('')+'</div>';
 m+='<h2 id="hist">'+T('Последние операции')+'</h2><div class="list">'+txs.slice(0,8).map(txRow).join('')+'</div>'}
-else{var ttl={pay:'Платежи',cards:'Мои карты',prof:'Профиль'}[t];top=bar+'<h1>'+T(ttl)+'</h1>';
+else{var ttl={pay:'Платежи',stats:'Аналитика',cards:'Мои карты',prof:'Профиль'}[t];top=bar+'<h1>'+T(ttl)+'</h1>';
 if(t==='pay'){m='<input class="srch" id="q" value="'+S.q.replace(/"/g,'')+'" placeholder="'+T('Поиск услуги')+'"><div class="chs"><button class="chip2'+(S.cat?'':' on')+'" data-a="cat:">'+T('Все')+'</button>'+CAT.map(function(x){return'<button class="chip2'+(S.cat===x[0]?' on':'')+'" data-a="cat:'+x[0]+'">'+T(x[0])+'</button>'}).join('')+'</div><div id="plist">'+payList()+'</div>'}
-if(t==='cards'){m=cards.map(function(x,i){return cc(x,i)}).join('')+'<button class="add" data-a="addcard">＋ '+T('Добавить карту')+'</button>'}
+if(t==='cards'){m='<p class="mu">Три демонстрационные карты · нажмите на карту для действий</p>'+cards.map(function(x,i){return cc(x,i)}).join('')+'<button class="add" data-a="addcard">＋ '+T('Добавить карту')+'</button><p class="subtle-note">Дизайн сделан для прототипа и не является официальным банковским макетом. Балансы и реквизиты демонстрационные.</p>'}
+if(t==='stats'){var spent=txs.filter(function(x){return x.s<0}).reduce(function(a,x){return a+x.a},0),income=txs.filter(function(x){return x.s>0}).reduce(function(a,x){return a+x.a},0),cats={};txs.filter(function(x){return x.s<0}).forEach(function(x){var k=x.n==='Beeline'?'Связь':x.n==='Электричество'?'Коммунальные':'Покупки';cats[k]=(cats[k]||0)+x.a});var vals=Object.keys(cats).map(function(k){return {n:k,v:cats[k]}}),max=Math.max(1,...vals.map(function(x){return x.v}));m='<div class="stat-grid"><div class="stat"><small>Расходы · демо</small><strong>'+fmt(spent)+' сум</strong></div><div class="stat"><small>Поступления · демо</small><strong>'+fmt(income)+' сум</strong></div></div><h2>Расходы по категориям</h2><div class="analytics-card">'+(vals.length?vals.map(function(x){return '<div class="category-line"><span class="catname">'+x.n+'</span><span class="track"><i style="width:'+Math.max(5,x.v/max*100)+'%"></i></span><strong>'+fmt(x.v)+'</strong></div>'}).join(''):'Нет данных')+'</div><h2>Динамика за неделю</h2><div class="analytics-card"><div class="bars">'+['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map(function(d,i){var v=[120,55,180,90,145,70,110][i];return '<div class="barcol"><div class="barfill" style="height:'+v/2+'%"></div><span>'+d+'</span></div>'}).join('')+'</div><p class="subtle-note">График недели — пример визуализации. Реальные данные появятся после подключения банковского API.</p></div><h2>Последние расходы</h2><div class="list">'+txs.filter(function(x){return x.s<0}).slice(0,5).map(txRow).join('')+'</div>'}
 if(t==='prof'){var th=[['light','Светлая'],['dark','Тёмная'],['auto','Как в системе']];
-m='<div class="prof"><div class="ava">ЖК</div><div><b>Жасур Каримов</b><span>+998 90 123 45 67</span></div></div><h2>'+T('Оформление')+'</h2><div class="list"><div class="set"><span>'+T('Тема')+'</span><div class="seg">'+th.map(function(x){return'<button class="'+(S.theme===x[0]?'on':'')+'" data-a="theme:'+x[0]+'">'+T(x[1])+'</button>'}).join('')+'</div></div><div class="set"><span>'+T('Язык')+'</span><div class="seg"><button class="'+(S.lang==='ru'?'on':'')+'" data-a="lang:ru">Русский</button><button class="'+(S.lang==='uz'?'on':'')+'" data-a="lang:uz">O‘zbekcha</button></div></div></div><h2>'+T('Безопасность')+'</h2><div class="list"><button class="row" data-a="pinchg"><span class="ic">🔑</span><span class="t"><b>'+T('Сменить PIN-код')+'</b></span><i class="ch">›</i></button><button class="row" data-a="lock"><span class="ic">🔒</span><span class="t"><b>'+T('Заблокировать приложение')+'</b></span><i class="ch">›</i></button></div><p class="mu" style="text-align:center;margin-top:24px">TURONPAY 1.0</p>'}}
-var nv=[['home','🏠','Главная'],['pay','💳','Платежи'],['cards','🪪','Карты'],['prof','👤','Профиль']];
+m='<div class="prof"><div class="ava">ТК</div><div><b>Талгат Каримов</b><span>+998 90 123 45 67</span></div></div><h2>'+T('Оформление')+'</h2><div class="list"><div class="set"><span>'+T('Тема')+'</span><div class="seg">'+th.map(function(x){return'<button class="'+(S.theme===x[0]?'on':'')+'" data-a="theme:'+x[0]+'">'+T(x[1])+'</button>'}).join('')+'</div></div><div class="set"><span>'+T('Язык')+'</span><div class="seg"><button class="'+(S.lang==='ru'?'on':'')+'" data-a="lang:ru">Русский</button><button class="'+(S.lang==='uz'?'on':'')+'" data-a="lang:uz">O‘zbekcha</button></div></div></div><h2>'+T('Безопасность')+'</h2><div class="list"><button class="row" data-a="face"><span class="ic">◉</span><span class="t"><b>Face ID / биометрия</b><span>'+(S.faceEnabled?'Включено на этом устройстве':'Настроить вход')+'</span></span><i class="ch">›</i></button><button class="row" data-a="pinchg"><span class="ic">🔑</span><span class="t"><b>'+T('Сменить PIN-код')+'</b></span><i class="ch">›</i></button><button class="row" data-a="lock"><span class="ic">🔒</span><span class="t"><b>'+T('Заблокировать приложение')+'</b></span><i class="ch">›</i></button></div><p class="mu" style="text-align:center;margin-top:24px">TURONPAY 1.0</p>'}}
+var nv=[['home','⌂','Главная'],['pay','↗','Платежи'],['stats','▥','Аналитика'],['cards','▣','Карты'],['prof','◉','Профиль']];
 $('#app').innerHTML='<div class="top">'+top+'</div><main>'+m+'</main><nav>'+nv.map(function(x){return'<button class="'+(t===x[0]?'on':'')+'" data-a="tab:'+x[0]+'"><i>'+x[1]+'</i>'+T(x[2])+'</button>'}).join('')+'</nav>';
 renderLock()}
 var toast=$('#toast'),tm;
 function msg(s){toast.textContent=T(s);toast.classList.add('show');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('show')},1800)}
 function sheet(h){$('#sh').innerHTML='<div class="sheet">'+h+'</div>';$('#shb').classList.add('on')}
-function closeSh(){$('#shb').classList.remove('on')}
+function closeSh(){stopQR();$('#shb').classList.remove('on')}
 var P=null;
 function payOpen(o){P=o;var c=cards[S.p],k=o.k||'out';
 var f=o.f?'<label for="pf">'+T(o.f)+'</label><input id="pf" inputmode="'+(o.ph||k==='tr'?'numeric':'text')+'" autocomplete="off" placeholder="'+(k==='tr'?'0000 0000 0000 0000':o.ph?'+998 90 123 45 67':'')+'" value="'+(o.ph?'+998 ':'')+'">':'';
-sheet('<div class="shh">'+ico(o.n,o.e)+'<h3>'+T(o.n)+'</h3></div><div class="src">'+T(k==='in'?'Зачисление на карту':'Списание с карты')+'<b>'+mask4(c)+'</b>'+T('Доступно')+': '+fmt(c.bal)+' '+T('сум')+'</div>'+f+'<label for="pa">'+T('Сумма, сум')+'</label><input id="pa" inputmode="numeric" placeholder="0" autocomplete="off"><div class="chips">'+[10000,50000,100000,500000].map(function(v){return'<button class="chip" data-a="amt:'+v+'">'+fmt(v)+'</button>'}).join('')+'</div><button class="go" data-a="payok">'+T(k==='tr'?'Перевести':k==='in'?'Пополнить':'Оплатить')+'</button><button class="cx" data-a="close">'+T('Отмена')+'</button>')}
-function payok(){var o=P,k=o.k||'out',c=cards[S.p],a=parseInt($('#pa').value.replace(/\D/g,''),10)||0,f='',d='';
+sheet('<div class="shh">'+ico(o.n,o.e)+'<h3>'+T(o.n)+'</h3></div><div class="src">'+T(k==='in'?'Зачисление на карту':'Списание с карты')+'<b>'+mask4(c)+'</b>'+T('Доступно')+': '+money(c,c.bal)+'</div>'+f+'<label for="pa">'+(c.currency==='USD'?'Сумма, USD':T('Сумма, сум'))+'</label><input id="pa" inputmode="decimal" placeholder="0" autocomplete="off"><div class="chips">'+[10000,50000,100000,500000].map(function(v){return'<button class="chip" data-a="amt:'+v+'">'+fmt(v)+'</button>'}).join('')+'</div><button class="go" data-a="payok">'+T(k==='tr'?'Перевести':k==='in'?'Пополнить':'Оплатить')+'</button><button class="cx" data-a="close">'+T('Отмена')+'</button>')}
+function payok(){var o=P,k=o.k||'out',c=cards[S.p],a=c.currency==='USD'?(parseFloat($('#pa').value.replace(/,/g,''))||0):(parseInt($('#pa').value.replace(/\D/g,''),10)||0),f='',d='';
 if(c.bl){msg('Карта заблокирована');return}
 if(o.f){f=$('#pf').value.trim();d=f.replace(/\D/g,'');
 if(k==='tr'&&d.length!==16){msg('Введите 16 цифр номера карты');return}
@@ -407,14 +487,57 @@ if(a<=0){msg('Введите сумму');return}
 if(k!=='in'&&a>c.bal){msg('Недостаточно средств');return}
 if(k==='tr')f=d.slice(0,4)+' •••• •••• '+d.slice(-4);
 c.bal+=k==='in'?a:-a;
-var t={n:o.n,e:o.e,op:k==='tr'?'Перевод по карте':k==='in'?'Пополнение карты':'Оплата услуги',s:k==='in'?1:-1,a:a,d:new Date(),f:f,id:rn(),cd:mask4(c)};
+var t={n:o.n,e:o.e,op:k==='tr'?'Перевод по карте':k==='in'?'Пополнение карты':'Оплата услуги',s:k==='in'?1:-1,a:a,currency:c.currency,d:new Date(),f:f,id:rn(),cd:mask4(c)};
 txs.unshift(t);render();openReceipt(t)}
 var RC=null;
 function rrow(k,v){return'<div><span>'+T(k)+'</span><b>'+v+'</b></div>'}
-function openReceipt(t){RC=t;var u=' '+T('сум');
-sheet('<div class="rh"><div class="ok">✓</div><b>'+T('Успешно')+'</b><div class="ra '+(t.s<0?'out':'in')+'">'+(t.s<0?'−':'+')+fmt(t.a)+u+'</div></div><div class="rr" style="padding:6px 0">'+rrow('Дата',dstr(t.d,1))+rrow('Время',tstr(t.d,1))+rrow('Операция',T(t.op))+(t.n!==t.op?rrow('Наименование',T(t.n)):'')+(t.f?rrow('Реквизиты',t.f):'')+rrow('Сумма',fmt(t.a)+u)+rrow('Комиссия','0'+u)+rrow('Итого',fmt(t.a)+u)+rrow('Карта списания',t.cd)+rrow('№ чека',t.id)+rrow('Статус',T('Выполнено'))+'</div><div class="rf">'+T('Электронный чек TURONPAY')+'</div><button class="go" data-a="share">'+T('Поделиться чеком')+'</button><button class="cx" data-a="close">'+T('Закрыть')+'</button>')}
+function openReceipt(t){RC=t;var u=' '+(t.currency==='USD'?'USD':T('сум'));var amountText=t.currency==='USD'?'$'+Number(t.a).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}):fmt(t.a);
+sheet('<div class="rh"><div class="ok">✓</div><b>'+T('Успешно')+'</b><div class="ra '+(t.s<0?'out':'in')+'">'+(t.s<0?'−':'+')+money({currency:t.currency||'UZS'},t.a)+u+'</div></div><div class="rr" style="padding:6px 0">'+rrow('Дата',dstr(t.d,1))+rrow('Время',tstr(t.d,1))+rrow('Операция',T(t.op))+(t.n!==t.op?rrow('Наименование',T(t.n)):'')+(t.f?rrow('Реквизиты',t.f):'')+rrow('Сумма',amountText+u)+rrow('Комиссия','0'+u)+rrow('Итого',amountText+u)+rrow('Карта списания',t.cd)+rrow('№ чека',t.id)+rrow('Статус',T('Выполнено'))+'</div><div class="rf">'+T('Электронный чек TURONPAY')+'</div><button class="go" data-a="share">'+T('Поделиться чеком')+'</button><button class="cx" data-a="close">'+T('Закрыть')+'</button>')}
+
+var qrStream=null,qrTimer=null,qrActive=false;
+function stopQR(){qrActive=false;if(qrTimer){clearTimeout(qrTimer);qrTimer=null}if(qrStream){qrStream.getTracks().forEach(function(t){t.stop()});qrStream=null}}
+function openQR(){
+ stopQR();
+ sheet('<div class="shh"><span class="ic">▣</span><h3>'+T('Сканировать QR-код')+'</h3></div><p class="qrhint">'+T('Наведите камеру на QR-код для оплаты. Это демонстрационный сканер.')+'</p><div class="qrframe"><video id="qrview" autoplay muted playsinline></video><div class="qrline"></div></div><p id="qrstatus" class="qrhint">'+T('Запрашиваем доступ к камере…')+'</p><label for="qrcode">'+T('Или введите код вручную')+'</label><input id="qrcode" autocomplete="off" placeholder="Например, TURON-12345"><button class="go" data-a="qrsend">'+T('Продолжить')+'</button><button class="cx" data-a="close">'+T('Закрыть')+'</button>');
+ startQR();
+}
+async function startQR(){
+ var status=$('#qrstatus'),video=$('#qrview');
+ if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){if(status)status.textContent=T('Камера недоступна в этом браузере. Введите код вручную.');return}
+ try{
+  qrStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});
+  if(!$('#qrview')){stopQR();return}
+  video.srcObject=qrStream;await video.play();qrActive=true;
+  if(!('BarcodeDetector' in window)){status.textContent=T('Камера включена. Если QR не распознаётся, введите код вручную ниже.');return}
+  var detector=new BarcodeDetector({formats:['qr_code']});
+  async function detect(){
+   if(!qrActive||!$('#qrview'))return;
+   try{var codes=await detector.detect(video);if(codes&&codes.length&&codes[0].rawValue){var inp=$('#qrcode');if(inp)inp.value=codes[0].rawValue;var st=$('#qrstatus');if(st)st.textContent=T('QR-код распознан. Нажмите «Продолжить».');return}}catch(e){}
+   qrTimer=setTimeout(detect,450);
+  }
+  detect();
+ }catch(e){if(status)status.textContent=T('Нет доступа к камере. Разрешите доступ в Safari или введите код вручную.')}
+}
 function copyTxt(s,m){try{navigator.clipboard.writeText(s).then(function(){msg(m)},function(){msg(m)})}catch(e){msg(m)}}
 function cardSheet(i){var c=cards[i];sheet(cc(c,i,1)+(i!==S.p?'<button class="go" style="margin-top:0" data-a="setp:'+i+'">'+T('Сделать основной')+'</button>':'')+'<button class="alt" data-a="blk:'+i+'">'+T(c.bl?'Разморозить':'Заморозить')+'</button><button class="alt" data-a="copy:'+i+'">'+T('Скопировать номер')+'</button><button class="cx" data-a="close">'+T('Закрыть')+'</button>')}
+var QR=null;
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function openNotifications(){var rows=txs.slice(0,6).map(function(t){return '<div class="notice"><div class="nicon">'+(t.s>0?'↙':'↗')+'</div><div><b>'+esc(T(t.n))+' · '+(t.s>0?'+':'−')+esc(money({currency:t.currency||'UZS'},t.a))+'</b><small>'+esc(T(t.op))+' · '+esc(rel(t.d))+' '+esc(tstr(t.d))+'</small></div></div>'}).join('');sheet('<div class="shh"><span class="ic">🔔</span><h3>Уведомления</h3></div><div class="list">'+(rows||'<div class="notice">Новых уведомлений нет</div>')+'</div><button class="cx" data-a="close">Закрыть</button>')}
+async function faceSetup(){
+ if(!window.PublicKeyCredential||!navigator.credentials){sheet('<div class="facebox"><div class="faceglyph">◉</div><h3>Биометрия недоступна</h3><p class="subtle-note">Откройте приложение по HTTPS в поддерживаемом браузере. Для защищённой авторизации нужна серверная проверка.</p></div><button class="cx" data-a="close">Закрыть</button>');return}
+ sheet('<div class="facebox"><div class="faceglyph">◉</div><h3>Настройка биометрии</h3><p class="subtle-note">Проверьте поддержку биометрии на устройстве. В этой версии результат хранится локально и не заменяет серверную банковскую авторизацию.</p><button class="go" data-a="facego">Продолжить</button></div><button class="cx" data-a="close">Отмена</button>')
+}
+async function faceGo(){
+ try{
+  var challenge=new Uint8Array(32);crypto.getRandomValues(challenge);var uid=new Uint8Array(16);crypto.getRandomValues(uid);
+  var cred=await navigator.credentials.create({publicKey:{challenge:challenge,rp:{name:'TURONPAY Demo',id:location.hostname},user:{id:uid,name:'talgat-demo',displayName:'Talgat'},pubKeyCredParams:[{type:'public-key',alg:-7},{type:'public-key',alg:-257}],authenticatorSelection:{authenticatorAttachment:'platform',userVerification:'required',residentKey:'preferred'},timeout:60000,attestation:'none'}});
+  if(cred){S.faceEnabled=true;save();closeSh();render();msg('Биометрия настроена на этом устройстве (демо)')}
+ }catch(e){msg('Не удалось настроить биометрию. Проверьте поддержку устройства и HTTPS.')}
+}
+async function faceLogin(){
+ if(!S.faceEnabled){faceSetup();return}
+ try{var ch=new Uint8Array(32);crypto.getRandomValues(ch);var res=await navigator.credentials.get({publicKey:{challenge:ch,rpId:location.hostname,userVerification:'required',timeout:60000}});if(res){lock.classList.remove('on');msg('Биометрическая проверка пройдена · демо')}}catch(e){msg('Биометрическая проверка отменена')}
+}
 function act(k,v){switch(k){
 case'tab':S.tab=v;S.cat='';S.q='';render();window.scrollTo(0,0);break;
 case'cat':S.cat=v;S.q='';S.tab='pay';render();window.scrollTo(0,0);break;
@@ -424,11 +547,15 @@ case'topup':payOpen({n:'Пополнение карты',e:'➕',f:'',k:'in'});b
 case'rc':openReceipt(txs[v]);break;
 case'hide':S.hide=!S.hide;render();break;
 case'lock':relock();break;
+case'face':faceSetup();break;
+case'facego':faceGo();break;
 case'close':closeSh();break;
-case'bell':msg('Новых уведомлений нет');break;
-case'qr':msg('Сканер QR скоро будет доступен');break;
+case'qrsend':var q=$('#qrcode')?$('#qrcode').value.trim():'';stopQR();if(!q){msg('Введите код или отсканируйте QR-код');break}var qr={merchant:q,amount:0,currency:'UZS',payload:q};try{var parsed=JSON.parse(q);qr.merchant=String(parsed.merchant||parsed.name||parsed.payee||'QR-получатель');qr.amount=Number(parsed.amount||0);qr.currency=String(parsed.currency||'UZS').toUpperCase();qr.payload=q}catch(e){}QR=qr;closeSh();sheet('<div class="shh"><span class="ic">▣</span><h3>Подтверждение QR-оплаты</h3></div><div class="src">Получатель<b>'+esc(qr.merchant)+'</b>Код<b>'+esc(qr.payload.slice(0,100))+'</b></div><label for="qrAmount">Сумма, '+esc(qr.currency)+'</label><input id="qrAmount" inputmode="decimal" placeholder="'+(qr.amount||'0')+'" value="'+(qr.amount||'')+'"><p class="subtle-note">Демонстрационный режим: подтверждение изменит только локальную историю и баланс в этом прототипе. Реальный перевод не выполняется.</p><button class="go" data-a="qrconfirm">Подтвердить демо-оплату</button><button class="cx" data-a="close">Отмена</button>');break;
+case'qrconfirm':var qa=parseFloat($('#qrAmount').value.replace(/,/g,''))||0;if(!QR||qa<=0){msg('Введите сумму');break}var qc=cards[S.p];if(qc.currency!==QR.currency){msg('Выберите карту в валюте '+QR.currency);break}if(qc.bal<qa){msg('Недостаточно средств');break}qc.bal-=qa;var qt={n:QR.merchant,e:'▣',op:'QR-оплата · демо',s:-1,a:qa,currency:qc.currency,d:new Date(),f:QR.payload.slice(0,80),id:rn(),cd:mask4(qc)};txs.unshift(qt);closeSh();render();openReceipt(qt);break;
+case'bell':openNotifications();break;
+case'qr':openQR();break;
 case'hist':$('#hist').scrollIntoView({behavior:'smooth'});break;
-case'amt':$('#pa').value=fmt(v);break;
+case'amt':$('#pa').value=cards[S.p].currency==='USD'?String(v):fmt(v);break;
 case'payok':payok();break;
 case'share':var t=RC;copyTxt('TURONPAY\n'+T(t.op)+': '+T(t.n)+'\n'+dstr(t.d,1)+', '+tstr(t.d,1)+'\n'+fmt(t.a)+' '+T('сум')+'\n'+T('№ чека')+': '+t.id,'Чек скопирован');break;
 case'theme':S.theme=v;applyTheme();save();render();break;
@@ -445,14 +572,15 @@ document.addEventListener('click',function(e){var b=e.target.closest('[data-a]')
 function fcard(v){return v.replace(/\D/g,'').slice(0,16).replace(/(\d{4})(?=\d)/g,'$1 ')}
 function fph(v){var d=v.replace(/\D/g,'');d=d.indexOf('998')===0?d.slice(3):'';d=d.slice(0,9);var o='+998 ';return o+[d.slice(0,2),d.slice(2,5),d.slice(5,7),d.slice(7,9)].filter(Boolean).join(' ')}
 document.addEventListener('input',function(e){var t=e.target,id=t.id;
-if(id==='pa')t.value=t.value.replace(/\D/g,'')?fmt(t.value.replace(/\D/g,'')):'';
+if(id==='pa')t.value=cards[S.p].currency==='USD'?t.value.replace(/[^0-9.]/g,''):t.value.replace(/\D/g,'')?fmt(t.value.replace(/\D/g,'')):'';
+else if(id==='qrAmount')t.value=t.value.replace(/[^0-9.]/g,'');
 else if(id==='pf'){if(P.k==='tr')t.value=fcard(t.value);else if(P.ph)t.value=fph(t.value)}
 else if(id==='cn')t.value=fcard(t.value);
 else if(id==='ce'){var d=t.value.replace(/\D/g,'').slice(0,4);t.value=d.length>2?d.slice(0,2)+'/'+d.slice(2):d}
 else if(id==='q'){S.q=t.value;$('#plist').innerHTML=payList()}});
 var pin='',lock=$('#lock'),dots=document.querySelectorAll('#dots i');
 function paint(){dots.forEach(function(d,i){d.classList.toggle('f',i<pin.length)})}
-function renderLock(){$('#lt').textContent=T('Введите PIN-код');$('#llogo').innerHTML=STAR+'<span>TURON<b>PAY</b></span>'}
+function renderLock(){$('#lt').textContent=T('Введите PIN-код');$('#llogo').innerHTML=STAR+'<span>TURON<b>PAY</b></span>';var fb=$('#faceLoginBtn');if(!fb){fb=document.createElement('button');fb.id='faceLoginBtn';fb.className='cx';fb.textContent='◉  Войти с Face ID';fb.style.marginTop='14px';$('#lock').appendChild(fb);fb.addEventListener('click',faceLogin)}fb.style.display=S.faceEnabled?'block':'none'}
 function key(k){if(k==='⌫')pin=pin.slice(0,-1);else if(/^\d$/.test(k)&&pin.length<4)pin+=k;paint();
 if(pin.length===4){if(pin===S.pin){setTimeout(function(){lock.classList.remove('on');pin='';paint()},150)}else{lock.classList.add('shake');msg('Неверный PIN-код');setTimeout(function(){pin='';paint();lock.classList.remove('shake')},400)}}}
 ['1','2','3','4','5','6','7','8','9','','0','⌫'].forEach(function(k){var b=document.createElement('button');b.type='button';b.textContent=k;if(!k){b.style.visibility='hidden';b.disabled=true}b.addEventListener('click',function(){key(k)});$('#pad').appendChild(b)});
@@ -462,7 +590,7 @@ applyTheme();document.documentElement.lang=S.lang;render();
 </script>
 <script>
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-  window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function (e) { console.log('Offline mode unavailable', e); }); });
+  window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function (e) { console.log('Offline mode unavailable', e); }); });
 }
 </script>
 </body>

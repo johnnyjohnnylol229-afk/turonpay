@@ -1,5 +1,6 @@
-const CACHE_NAME = 'turonpay-premium-v1';
-const APP_SHELL = ['/', '/index.html', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/apple-touch-icon.png'];
+const CACHE_NAME = 'turonpay-wallet-pro-v3';
+const BASE = new URL('./', self.location.href).pathname;
+const APP_SHELL = [BASE, BASE+'index.html', BASE+'manifest.webmanifest', BASE+'icons/icon-192.png', BASE+'icons/icon-512.png', BASE+'icons/apple-touch-icon.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
 });
@@ -13,5 +14,5 @@ self.addEventListener('fetch', event => {
   event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
     if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)); }
     return response;
-  }).catch(() => caches.match('/index.html'))));
+  }).catch(() => caches.match(BASE+'index.html'))));
 });
