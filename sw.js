@@ -1,4 +1,4 @@
-const CACHE_NAME = 'turonpay-multilingual-v7';
+const CACHE_NAME = 'turonpay-premium-v3';
 const BASE = new URL('./', self.location.href).pathname;
 const APP_SHELL = [BASE, BASE+'index.html', BASE+'manifest.webmanifest', BASE+'icons/icon-192.png', BASE+'icons/icon-512.png', BASE+'icons/apple-touch-icon.png'];
 self.addEventListener('install', event => {
